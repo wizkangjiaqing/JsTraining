@@ -22,8 +22,6 @@ function arrayTest() {
 
 function initDom() {
     //
-    console.log(document);
-    console.log(document.body);
     let divName = document.createElement('div');
     document.body.appendChild(divName);
     //
@@ -31,6 +29,7 @@ function initDom() {
     labelName.innerText = '用户名：';
     labelName.setAttribute('for', 'username');
     divName.appendChild(labelName);
+    //
     let inputName = document.createElement('input');
     inputName.type = 'text';
     inputName.id = 'username';
@@ -38,10 +37,12 @@ function initDom() {
     //
     let divPass = document.createElement('div');
     document.body.appendChild(divPass);
+    //
     let labelPass = document.createElement('label');
     labelPass.innerText = '密码：';
     labelPass.setAttribute('for', 'password');
     divPass.appendChild(labelPass);
+    //
     let inputPass = document.createElement('input');
     inputPass.type = 'password';
     inputPass.id = 'password';
@@ -51,7 +52,4 @@ function initDom() {
     submitBtn.innerText = '登录';
     submitBtn.id = 'submit';
     document.body.appendChild(submitBtn);
-
 }
-
-run();
