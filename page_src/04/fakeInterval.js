@@ -11,7 +11,6 @@ function startTimer(handler, timeMills, id) {
     setTimeout(function() {
         handler();
         if (currentTimers.indexOf(id) == -1) {
-            console.log('clear timer');
             return;
         }
         startTimer(handler, timeMills, id);    
@@ -24,10 +23,18 @@ function clearTimer(id) {
 }
 
 // test
-var index = setTimer(function() {
-    console.log('timer is working');
+var index1 = setTimer(function() {
+    console.log('timer is working1');
+}, 1000);
+
+var index2 = setTimer(function() {
+    console.log('timer is working2');
 }, 1000);
 
 setTimeout(function() {
-    clearTimer(index);
+    clearTimer(index1);
 }, 5000);
+
+setTimeout(function() {
+    clearTimer(index2);
+}, 10000);
